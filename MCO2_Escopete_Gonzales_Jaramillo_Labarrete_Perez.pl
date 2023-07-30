@@ -9,16 +9,16 @@ game(skyrim).
 game(persona5royal).
 
 /*Game has mature rating*/
-is_mature(fallout_new_vegas, mature).
-is_mature(south_park_stick_of_truth, mature).
-is_mature(skyrim, mature).
-is_mature(persona5royal, mature).
+is_mature(fallout_new_vegas).
+is_mature(south_park_stick_of_truth).
+is_mature(skyrim).
+is_mature(persona5royal).
 
 /*Game does not have mature rating*/
-not_mature(stardew_valley, not_mature).
-not_mature(earthbound, not_mature).
-not_mature(botw, not_mature).
-not_mature(pokemon_emerald, not_mature).
+not_mature(stardew_valley).
+not_mature(earthbound).
+not_mature(botw).
+not_mature(pokemon_emerald).
 
 /*Game has fantasy elements*/
 is_fantasy(botw).
@@ -72,7 +72,7 @@ enjoys_turn_based(TurnBasedPref) :-
 
 /* Rule to check if a game satisfies the user's preferences */
 satisfies_preferences(Game, MaturePref, FantasyPref, TurnBasedPref) :-
-        (MaturePref = mature -> is_mature(Game, mature) ; not_mature(Game, not_mature)),
+        (MaturePref = mature -> is_mature(Game) ; not_mature(Game)),
         (FantasyPref = is_fantasy -> is_fantasy(Game) ; not_fantasy(Game)),
         (TurnBasedPref = turn_based -> turn_based(Game) ; not_turn_based(Game)),
         format('Your recommended game is: ~w!', [Game]).
