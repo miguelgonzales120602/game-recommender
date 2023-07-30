@@ -46,6 +46,14 @@ not_turn_based(skyrim).
 
 /* Rule to recommend a game */
 recommend_game(PreferredGame) :-
+        writeln('---------------------------------------- RPG Game Recommender ----------------------------------------'),nl,
+        writeln('Instructions:'),
+        writeln('1. This program is designed to recommend a role-playing game (RPG) based on your preferences.'),
+        writeln('2. You will be asked a series of questions to determine your game preferences.'),
+        writeln('3. Based on your answers, the program will suggest an RPG game that matches your preferences.'),
+        writeln('4. Enjoy exploring your recommended RPG game! :)'), nl,
+    	writeln('-------------------------------------------------------------------------------------------------------------------'),nl,
+       
         can_play_mature(MaturePref),
         enjoys_fantasy(FantasyPref),
         enjoys_turn_based(TurnBasedPref),
